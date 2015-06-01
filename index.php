@@ -7,9 +7,9 @@ require_once "operatingsystem.php";
 $request = new Request();
 $sock = $request->createSocket();
 
-if (!$request->isError()) {
-
-	//$request->redirectError();
+if (! $request->isError()) {
+	
+	// $request->redirectError();
 	
 	$countryStats = $request->getCountryStats();
 	$osStats = $request->getOperatingSystemStats();
@@ -37,42 +37,42 @@ require_once "layout/header.php";
 				</div>
 				<ul class="list-group">
 
-				<?php 
+				<?php
 				
-					arsort($countryStats);
-					$numberValues = array_values($countryStats);
-					for ($i = 0; $i < 5 && $i < count($countryStats); $i++) {
-						$number = $numberValues[$i];
-						$short = key($countryStats);
-						next($countryStats);
-						
-						$icon = "<img src='images/flags/" . strtolower($short) . ".png'>";
-						$displayCountry = Countries::short2long($short);
-						
-						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo $number;
-						echo ' </span> <span class="description-text"> ';
-						echo $icon . " " . $displayCountry;
-						echo '</span></div> <span class="stat-value"> ';
-						echo " + 0 ";
-						echo '<i class="icon-sort"></i></span>';
-					}
+				arsort($countryStats);
+				$numberValues = array_values($countryStats);
+				for($i = 0; $i < 5 && $i < count($countryStats); $i ++) {
+					$number = $numberValues [$i];
+					$short = key($countryStats);
+					next($countryStats);
 					
-					if (empty($countrystats)) {
-						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo "0";
-						echo ' </span> <span class="description-text"> ';
-						echo "None";
-						echo '</span></div> <span class="stat-value"> ';
-						echo " + 0 ";
-						echo '<i class="icon-sort"></i></span>';
-					}
+					$icon = "<img src='images/flags/" . strtolower($short) . ".png'>";
+					$displayCountry = Countries::short2long($short);
+					
+					echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+					echo $number;
+					echo ' </span> <span class="description-text"> ';
+					echo $icon . " " . $displayCountry;
+					echo '</span></div> <span class="stat-value"> ';
+					echo " + 0 ";
+					echo '<i class="icon-sort"></i></span>';
+				}
+				
+				if (empty($countrystats)) {
+					echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+					echo "0";
+					echo ' </span> <span class="description-text"> ';
+					echo "None";
+					echo '</span></div> <span class="stat-value"> ';
+					echo " + 0 ";
+					echo '<i class="icon-sort"></i></span>';
+				}
 				?>
 							
 				</ul>
 			</div>
 		</div>
-		
+
 		<div class="proton-widget general-stats">
 			<div class="panel panel-primary front">
 				<div class="panel-heading">
@@ -80,34 +80,34 @@ require_once "layout/header.php";
 				</div>
 				<ul class="list-group">
 
-				<?php 
-					arsort($osStats);
-					$numberValues = array_values($osStats);
-					for ($i = 0; $i < 5 && $i < count($osStats); $i++) {
-						$number = $numberValues[$i];
-						$short = key($osStats);
-						next($osStats);
-						
-						$icon = "<img src='" . OperatingSystem::getIcon($short) . "'>";
-						
-						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo $number;
-						echo ' </span> <span class="description-text"> ';
-						echo $icon . " " . $short;
-						echo '</span></div> <span class="stat-value"> ';
-						echo " + 0 ";
-						echo '<i class="icon-sort"></i></span>';
-					}
+				<?php
+				arsort($osStats);
+				$numberValues = array_values($osStats);
+				for($i = 0; $i < 5 && $i < count($osStats); $i ++) {
+					$number = $numberValues [$i];
+					$short = key($osStats);
+					next($osStats);
 					
-					if (empty($osStats)) {
-						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo "0";
-						echo ' </span> <span class="description-text"> ';
-						echo "None";
-						echo '</span></div> <span class="stat-value"> ';
-						echo " + 0 ";
-						echo '<i class="icon-sort"></i></span>';
-					}
+					$icon = "<img src='" . OperatingSystem::getIcon($short) . "'>";
+					
+					echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+					echo $number;
+					echo ' </span> <span class="description-text"> ';
+					echo $icon . " " . $short;
+					echo '</span></div> <span class="stat-value"> ';
+					echo " + 0 ";
+					echo '<i class="icon-sort"></i></span>';
+				}
+				
+				if (empty($osStats)) {
+					echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+					echo "0";
+					echo ' </span> <span class="description-text"> ';
+					echo "None";
+					echo '</span></div> <span class="stat-value"> ';
+					echo " + 0 ";
+					echo '<i class="icon-sort"></i></span>';
+				}
 				?>
 							
 				</ul>
