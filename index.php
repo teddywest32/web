@@ -7,11 +7,14 @@ require_once "operatingsystem.php";
 $request = new Request();
 $sock = $request->createSocket();
 
-$request->redirectError();
+if (!$request->isError()) {
 
-$countryStats = $request->getCountryStats();
-$osStats = $request->getOperatingSystemStats();
-$request->disconnect();
+	//$request->redirectError();
+	
+	$countryStats = $request->getCountryStats();
+	$osStats = $request->getOperatingSystemStats();
+	$request->disconnect();
+}
 
 require_once "layout/header.php";
 
@@ -22,6 +25,11 @@ require_once "layout/header.php";
 	<br>
 
 	<section class="widget-group">
+		<?php
+		if ($request->isError()) {
+			echo "<font color=#ff0000 size=32>" . $request->sock . "</font>";
+		}
+		?>
 		<div class="proton-widget general-stats">
 			<div class="panel panel-primary front">
 				<div class="panel-heading">
@@ -30,6 +38,7 @@ require_once "layout/header.php";
 				<ul class="list-group">
 
 				<?php 
+				
 					arsort($countryStats);
 					$numberValues = array_values($countryStats);
 					for ($i = 0; $i < 5 && $i < count($countryStats); $i++) {
