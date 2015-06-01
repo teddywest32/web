@@ -1,7 +1,9 @@
 <?php
 
-	define("ADDRESS", "127.0.0.1");
-	define("PORT", "1335");
-	define("PASS", "PWD");
+$ini = parse_ini_file("files/config.ini");
+
+define("ADDRESS", $ini['host']);
+define("PORT", $ini['port']);
+define("PASS", $ini['pass']);
 
 ?>
