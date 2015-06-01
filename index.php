@@ -82,9 +82,19 @@ require_once "layout/header.php";
 						$icon = "<img src='" . OperatingSystem::getIcon($short) . "'>";
 						
 						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo $number;;
+						echo $number;
 						echo ' </span> <span class="description-text"> ';
 						echo $icon . " " . $short;
+						echo '</span></div> <span class="stat-value"> ';
+						echo " + 0 ";
+						echo '<i class="icon-sort"></i></span>';
+					}
+					
+					if (empty($osStats)) {
+						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+						echo "0";
+						echo ' </span> <span class="description-text"> ';
+						echo "None";
 						echo '</span></div> <span class="stat-value"> ';
 						echo " + 0 ";
 						echo '<i class="icon-sort"></i></span>';
