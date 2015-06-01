@@ -41,9 +41,19 @@ require_once "layout/header.php";
 						$displayCountry = Countries::short2long($short);
 						
 						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
-						echo $number;;
+						echo $number;
 						echo ' </span> <span class="description-text"> ';
 						echo $icon . " " . $displayCountry;
+						echo '</span></div> <span class="stat-value"> ';
+						echo " + 0 ";
+						echo '<i class="icon-sort"></i></span>';
+					}
+					
+					if (empty($countrystats)) {
+						echo '<li class="list-group-item"><div class="text-holder"><span class="title-text"> ';
+						echo "0";
+						echo ' </span> <span class="description-text"> ';
+						echo "None";
 						echo '</span></div> <span class="stat-value"> ';
 						echo " + 0 ";
 						echo '<i class="icon-sort"></i></span>';
