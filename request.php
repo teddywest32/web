@@ -27,6 +27,18 @@ class Request {
 		return "";
 	}
 	
+	public function getInfo() {
+		$this->write(PACKET_SERVER_INFO);
+		$raw = socket_read($this->sock, 1024 * 10, PHP_NORMAL_READ) or die ("Could not read from socket\n");
+		
+		$infoStrings = explode(";", $raw);
+		$info = array(
+				"uptime" => $infoStrings[0]
+		);
+		
+		return $info;
+	}	
+	
 	public function getSlaves() {
 		$this->write(PACKET_LIST);
 		$raw = socket_read($this->sock, 1024 * 10, PHP_NORMAL_READ) or die("Could not read from socket\n");
