@@ -23,7 +23,7 @@
 							<?php
 								if (!function_exists("printTableData")) {
 									function printTableData($string) {
-										if ($string == "Nothing found") {
+										if (strlen($string) == 0 || $string == "Nothing found") {
 											echo "<td><b><font color='#ff0000'>$string</font></b></td>";
 										} else {
 											echo "<td>" . $string . "</td>";
