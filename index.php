@@ -65,11 +65,10 @@ require_once "layout/header.php";
 							echo " + 0 ";
 							echo '<i class="icon-sort"></i></span>';
 						}
-						
-						echo '</ul>
+					}
+					echo '</ul>
 						</div>
 						</div>';
-					}
 				}
 				?>
 
