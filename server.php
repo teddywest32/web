@@ -12,45 +12,45 @@ $request->disconnect();
 <section class="wrapper scrollable">
 	<?php require_once "layout/menubar.php"; ?>
 	<br>
-	<div class="col-md-3">
-		<div class="panel panel-default panel-block">
-			<div class="list-group">
-				<div class="list-group-item">
-					<h4 class="section-title">Search Clients</h4>
-					<form class="form-horizontal" name="search" method="post">
+	
+<div class="col-md-5">
+	<div class="panel panel-default panel-block">
+		<div class="list-group">
+			<div class="list-group-item">
+				<div class="form-group">
+					<h4 class="section-title">Properties</h4>
+					<table class="table table-bordered table-striped">
+						<thead class="">
+							<tr>
+								<th>Key</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
 
-						<div class="form-group">
-							<div class="col-lg-12">
-								<select class="form-control" name="what">
-									<option value="country">Country</option>
-									<option value="userstring">Username</option>
-									<option value="os">Operating System</option>
-									<option value="ip">IP</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-lg-12">
-								<input name="keyword" id="input-horizontal"
-									class="form-control input-counter" placeholder="Keyword">
-							</div>
-						</div>
-
-
-						<div class="form-group">
-							<label for="input-horizontal" class="col-lg-4 control-label"></label>
-							<div class="col-lg-8" align="right">
-								<button type="button" class="btn btn-primary"
-									onclick="javascript:document.search.submit();">Search</button>
-							</div>
-						</div>
-
-					</form>
+							<?php
+								if (!function_exists("printTableData")) {
+									function printTableData($string) {
+										if ($string == "Nothing found") {
+											echo "<td><b><font color='#ff0000'>$string</font></b></td>";
+										} else {
+											echo "<td>" . $string . "</td>";
+										}
+									}
+								}
+							?>
+														
+							<tr>
+								<td>Uptime</td>
+								<?php echo printTableData($info["uptime"]); ?>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 
 <?php
