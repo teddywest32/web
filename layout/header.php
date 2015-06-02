@@ -54,6 +54,10 @@
 			<li><a href="search.php"> <i class="icon-search nav-icon"></i> <span
 					class="nav-text"> Search </span>
 			</a></li>
+			
+			<li><a href="server.php"> <i class="icon-globe nav-icon"></i> <span
+					class="nav-text"> Server </span>
+			</a></li>
 		</ul>
 
 		<ul class="logout">

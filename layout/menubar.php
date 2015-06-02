@@ -6,6 +6,8 @@
 		</a></li>
 		<li><a href="search.php"> <i class="icon-search"></i> <span>Search</span>
 		</a></li>
+		<li><a href="server.php"> <i class="icon-globe"></i> <span>Server</span>
+		</a></li>
 		<li><a href="https://jrat.io"> <i class="icon-external-link"></i> <span>jrat.io</span>
 		</a></li>
 	</ul>
