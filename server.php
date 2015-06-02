@@ -44,6 +44,14 @@ $request->disconnect();
 								<td>Uptime</td>
 								<?php printTableData($info["uptime"]); ?>
 							</tr>
+							<tr>
+								<td>Network Usage</td>
+								<?php printTableData($info["netusage"]); ?>
+							</tr>
+							<tr>
+								<td>Bandwidth</td>
+								<?php printTableData($info["bandwidth"]); ?>
+							</tr>
 						</tbody>
 					</table>
 				</div>

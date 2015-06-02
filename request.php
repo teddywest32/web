@@ -33,7 +33,9 @@ class Request {
 		
 		$infoStrings = explode(";", $raw);
 		$info = array(
-				"uptime" => $infoStrings[0]
+				"uptime" => $infoStrings[0],
+				"netusage" => $infoStrings[1],
+				"bandwidth" => $infoStrings[2]
 		);
 		
 		return $info;
