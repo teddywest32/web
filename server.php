@@ -42,7 +42,7 @@ $request->disconnect();
 														
 							<tr>
 								<td>Uptime</td>
-								<?php echo printTableData($info["uptime"]); ?>
+								<?php printTableData($info["uptime"]); ?>
 							</tr>
 						</tbody>
 					</table>
