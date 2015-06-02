@@ -8,9 +8,6 @@ $request = new Request();
 $sock = $request->createSocket();
 
 if (! $request->isError()) {
-	
-	// $request->redirectError();
-	
 	$countryStats = $request->getCountryStats();
 	$osStats = $request->getOperatingSystemStats();
 	$request->disconnect();
