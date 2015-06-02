@@ -57,6 +57,9 @@
 		</ul>
 
 		<ul class="logout">
+			<li><a href="https://jrat.io"> <i class="icon-external-link nav-icon"></i> <span
+					class="nav-text"> jrat.io </span>
+			</a></li>
 			<li><a href="logout.php"> <i class="icon-off nav-icon"></i> <span
 					class="nav-text"> Logout </span>
 			</a></li>
