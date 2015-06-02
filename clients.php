@@ -1,5 +1,7 @@
 <?php
+
 require_once "request.php";
+require_once "config.php";
 
 $request = new Request();
 $sock = $request->createSocket();
@@ -63,7 +65,7 @@ require_once "layout/header.php";
 ?>
 
 <script type="text/javascript">
-    setInterval("reload_table();", 1000); 
+    setInterval("reload_table();", <?php echo REFRESH_INTERVAL; ?>); 
     function reload_table(){
       $('#refresh').load(location.href + ' #table', function() {
     	  $('#selectall').click(function(event) {
