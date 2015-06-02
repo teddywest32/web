@@ -5,6 +5,7 @@ require_once "request.php";
 
 $request = new Request();
 $sock = $request->createSocket();
+$request->redirectError();
 $info = $request->getInfo();
 $request->disconnect();
 ?>
