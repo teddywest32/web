@@ -35,7 +35,14 @@ class Slave {
 	}
 	
 	public function getDisplayCountry() {
-		return $country = '<img src="images/flags/' . strtolower($this->array['country']) . '.png"> ' . Countries::short2long($this->array['country']);
+		$flagname = strtolower($this->array["country"]);
+		$flagpath = "images/flags/" . $flagname . ".png";
+		
+		if (!file_exists($flagpath)) {
+			$flagpath = "images/flags/unknown.png";
+		}
+		
+		return $country = '<img src="' . $flagpath . '"> ' . Countries::short2long($this->array['country']);
 	}
 	
 	public function getIdentifier() {

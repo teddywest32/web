@@ -255,13 +255,20 @@ class Countries {
         "ZW" => "Zimbabwe",
         "AX" => "Åland Islands",
         "UNKNOWN" => "Unknown",
+		"?" => "Unknown"
 	);
 	
 	
 	
 	
 	public static function short2long($country = "Unknown") {
-		return self::$countries[strtoupper($country)];
+		$country = strtoupper($country);
+		
+		if (isset(self::$countries[$country])) {
+			return self::$countries[$country];
+		} else {
+			return "Unknown";
+		}
 	}
 	
 	public static function long2short($country = "Unknown") {
