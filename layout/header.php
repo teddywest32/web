@@ -48,7 +48,7 @@
 			</a></li>
 
 			<li><a href="clients.php"> <i class="icon-table nav-icon"></i> <span
-					class="nav-text"> Connections </span>
+					class="nav-text"> Clients </span>
 			</a></li>
 
 			<li><a href="search.php"> <i class="icon-search nav-icon"></i> <span
