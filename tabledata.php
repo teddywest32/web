@@ -10,7 +10,7 @@
 		<div class="list-group">
 			<div class="list-group-item">
 				<div class="form-group">
-					<h4 class="section-title">Properties</h4>
+					<a href="client.php?id=<?php echo $slave->getUniqueId(); ?>"><h4 class="section-title">Properties</h4></a>
 					<table class="table table-bordered table-striped">
 						<thead class="">
 							<tr>
