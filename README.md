@@ -15,6 +15,6 @@ Install in default apache2 directory
 ```
 $ cd /var/www
 $ git clone https://github.com/java-rat/jrat-web.git
-$ mv jrat-web/* .
+$ mv jrat-web/ .
 $ rmdir jrat-web
 ```
